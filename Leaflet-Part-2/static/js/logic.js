@@ -53,16 +53,16 @@ let earthquakeArray =[]
   for (let i = 0; i < data.features.length; i++) 
   {
     let mag = data.features[i].properties.mag*4;
-    let depth = data.features[i].geometry.coordinates[2];
+    let depth = Math.round(data.features[i].geometry.coordinates[2]*10000)/10000;
     let lat = data.features[i].geometry.coordinates[1];
     let lng = data.features[i].geometry.coordinates[0];
     
     cMarker = L.circleMarker([lat, lng], {radius: mag, color:"#000", fillColor: getColor(depth) , fillOpacity: 0.5, weight:0.5})
-    .bindPopup(`<h3>${data.features[i].properties.mag}, ${depth}, ${data.features[i].properties.place}</h3>`);
+    .bindPopup(`<h3>Mag: ${data.features[i].properties.mag}, Depth: ${depth}km, Loc: ${data.features[i].properties.place}</h3>`);
     earthquakeArray.push(cMarker);
   };
 // Create the tectonic plates layer
-let tectonicPlatesLayer = L.geoJson(tectonicData, {style: function(){return {color:"#48cae4",weight:2}}});
+let tectonicPlatesLayer = L.geoJson(tectonicData, {style: function(){return {color:"#d90429",weight:2}}});
 
 // Add the earthquakes array to the earthquakes layer
 L.layerGroup(earthquakeArray).addTo(mapLayers.earthquakes);
