@@ -1,5 +1,5 @@
 # Leaflet Challenge
-This challenge as part of the UCB Data analaytics bootcamp builds a Leaflet.js visualization for the USGS earthquake data. 
+This challenge as part of the UCB Data analytics bootcamp builds a Leaflet.js visualization for the USGS earthquake data. 
 
 ## Part 1 - Create the Earthquake Visualization
 The index.html gets the Leaflet CSS and javascript, along with D3.js. The logic.js file in the Leaflet-Part-1/static/js folder does the following:
