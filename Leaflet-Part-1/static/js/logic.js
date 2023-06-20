@@ -24,7 +24,7 @@ d3.json(queryUrl).then(function (data) {
     let lat = data.features[i].geometry.coordinates[1];
     let lng = data.features[i].geometry.coordinates[0];
     
-    L.circleMarker([lat, lng], {radius: mag, color:"#000", fillColor: getColor(depth) , fillOpacity: 0.5, weight:0.5})
+    L.circleMarker([lat, lng], {radius: mag, color:"#000", fillColor: getColor(depth) , fillOpacity: 0.75, weight:0.5})
     .bindPopup(`<h3>Mag: ${data.features[i].properties.mag}, Depth: ${depth}km, Loc: ${data.features[i].properties.place}</h3>`)
     .addTo(myMap);
   };
@@ -34,9 +34,9 @@ let legend = L.control({position: "bottomright"});
 
 //Create a function to show the range colors for the density intervals in the legend.
 function getColor(d) {
-  return d > 90 ? '#FF5C5C' :
-         d > 70  ? '#FF9999' :
-         d > 50  ? '#F5A300' :
+  return d > 90 ? '#780000' :
+         d > 70  ? '#EF233C' :
+         d > 50  ? '#FF006E' :
          d > 30  ? '#FFC247' :
          d > 10   ? '#B5DD7E' :
          d > -10   ? '#69D025' :

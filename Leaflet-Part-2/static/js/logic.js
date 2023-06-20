@@ -38,7 +38,7 @@ d3.json(queryUrl).then(function (data) {
       
 // Set objects for the base and the overlay layers.
   let baseMaps = {
-    "Street Map": earthquakeMap,
+    "Outdoor": earthquakeMap,
     "Satellite Map": satelliteMap,
   };
 
@@ -78,9 +78,9 @@ let legend = L.control({position: "bottomright"});
 
 // function to display the earthquake density color
 function getColor(d) {
-  return d > 90 ? '#FF5C5C' :
-         d > 70  ? '#FF9999' :
-         d > 50  ? '#F5A300' :
+  return d > 90 ? '#780000' :
+         d > 70  ? '#EF233C' :
+         d > 50  ? '#FF006E' :
          d > 30  ? '#FFC247' :
          d > 10   ? '#B5DD7E' :
          d > -10   ? '#69D025' :
